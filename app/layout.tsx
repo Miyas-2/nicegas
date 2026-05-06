@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-display",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -27,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="id"
-      className={`${plusJakartaSans.variable} ${dmSans.variable} h-full antialiased`}
-    >
+    <html lang="id" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

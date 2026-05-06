@@ -1,91 +1,84 @@
 export const ProblemSolution = () => (
-  <section id="masalah" style={{ padding: "100px 0", background: "#fff" }}>
+  <section id="masalah" style={{ padding: "100px 0", background: "var(--white)" }}>
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-      <div style={{ textAlign: "center", marginBottom: 64 }} className="reveal">
-        <span className="section-label">Tantangan &amp; Solusi</span>
-        <h2 className="section-heading" style={{ fontWeight: 800, fontSize: "2.2rem", marginTop: 12, marginBottom: 16 }}>
-          Dari Limbah Menjadi Energi Bersih
+      <div style={{ marginBottom: 64 }} className="reveal">
+        <span className="section-label">TANTANGAN &amp; SOLUSI</span>
+        <h2 className="section-heading" style={{ fontWeight: 800, fontSize: "2.4rem", marginTop: 16, letterSpacing: "-0.02em" }}>
+          Dari Limbah Menjadi<br />Energi Bersih
         </h2>
-        <p style={{ color: "var(--slate-700)", maxWidth: 560, margin: "0 auto", lineHeight: 1.7 }}>
-          Rendahnya pengelolaan limbah kotoran hewan di Jawa Barat menjadi masalah serius yang membutuhkan solusi inovatif dan berkelanjutan.
-        </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }} className="ps-grid">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }} className="ps-grid">
         {/* Problem */}
-        <div className="ps-card ps-card-problem reveal-left">
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(239,68,68,0.10)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="#EF4444" strokeWidth="2" />
-                <path d="M7 7L13 13M13 7L7 13" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+        <div className="panel reveal-left" style={{ borderRight: "none" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
+            <div style={{ width: 32, height: 32, background: "var(--orange)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 4L12 12M12 4L4 12" stroke="white" strokeWidth="2.5" strokeLinecap="square" />
               </svg>
             </div>
-            <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.1rem", color: "var(--slate-900)" }}>
+            <h3 style={{ fontWeight: 800, fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--gray-900)" }}>
               Masalah Utama
             </h3>
           </div>
 
-          {/* Data highlight */}
-          <div style={{ background: "var(--orange-pale)", borderRadius: 14, padding: "20px 24px", marginBottom: 24, border: "1px solid rgba(242,101,34,0.15)" }}>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "2rem", color: "var(--orange)", lineHeight: 1.2 }}>
-              75%
-            </div>
-            <p style={{ fontSize: 13, color: "var(--slate-700)", lineHeight: 1.6, marginTop: 6 }}>
-              limbah kotoran hewan di Pangalengan <strong>belum terkelola</strong> dengan baik.
+          <div style={{ borderLeft: "3px solid var(--orange)", paddingLeft: 20, marginBottom: 28 }}>
+            <div style={{ fontWeight: 800, fontSize: "3rem", color: "var(--orange)", lineHeight: 1 }}>75%</div>
+            <p style={{ fontSize: 14, color: "var(--gray-500)", lineHeight: 1.6, marginTop: 8 }}>
+              limbah kotoran hewan di Pangalengan <strong style={{ color: "var(--gray-900)" }}>belum terkelola</strong> dengan baik.
             </p>
           </div>
 
-          <ul style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              "Di Pangalengan, terdapat 19.000 ekor sapi yang dikelola oleh 3.500 peternak.",
+              "19.000 ekor sapi dikelola oleh 3.500 peternak di Pangalengan.",
               "Baru 25% limbah kotoran ternak yang terkelola dengan baik.",
               "Penumpukan limbah organik mencemari lingkungan dan sumber air.",
-              "Ketergantungan energi fosil dengan harga yang terus meningkat.",
+              "Ketergantungan energi fosil dengan biaya terus meningkat.",
             ].map((item, i) => (
-              <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--slate-700)", lineHeight: 1.6 }}>
-                <span style={{ flexShrink: 0, marginTop: 4, width: 6, height: 6, borderRadius: "50%", background: "#EF4444", opacity: 0.7 }} />
+              <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: 14, color: "var(--gray-500)", lineHeight: 1.6 }}>
+                <span style={{ flexShrink: 0, marginTop: 6, width: 6, height: 6, background: "var(--orange)" }} />
                 {item}
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Solution */}
-        <div className="ps-card ps-card-solution reveal-right" style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2" />
-                <path d="M6 10L9 13L14 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <div className="panel-dark reveal-right" style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
+            <div style={{ width: 32, height: 32, background: "var(--orange)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L6.5 11.5L13 4.5" stroke="white" strokeWidth="2.5" strokeLinecap="square" />
               </svg>
             </div>
-            <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.1rem", color: "#fff" }}>
+            <h3 style={{ fontWeight: 800, fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff" }}>
               Solusi NICEGAS
             </h3>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,0.15)", borderRadius: 14, padding: "20px 24px", marginBottom: 24, border: "1px solid rgba(255,255,255,0.2)" }}>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.95)", lineHeight: 1.7 }}>
-              ITENAS menghadirkan fasilitas <strong>Waste to Energy Miniplant</strong> untuk mengolah kotoran hewan dan limbah organik menjadi biogas (NICEGAS) — menyelesaikan masalah penumpukan limbah sekaligus memberikan ketahanan energi.
+          <div style={{ borderLeft: "3px solid var(--orange)", paddingLeft: 20, marginBottom: 28 }}>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", lineHeight: 1.7 }}>
+              ITENAS menghadirkan fasilitas <strong style={{ color: "#fff" }}>Waste to Energy Miniplant</strong> untuk mengolah kotoran hewan dan limbah organik menjadi NICEGAS — menyelesaikan penumpukan limbah sekaligus memberikan ketahanan energi.
             </p>
           </div>
 
-          <ul style={{ display: "flex", flexDirection: "column", gap: 14, flex: 1 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
             {[
               "Mengubah limbah organik menjadi Bio-CNG siap pakai, bebas bau dan aman.",
               "Mengurangi emisi karbon secara signifikan.",
               "Mengubah limbah bernilai negatif menjadi produk bernilai ekonomi tinggi.",
               "Meningkatkan kesejahteraan peternak melalui gas murah.",
             ].map((item, i) => (
-              <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "rgba(255,255,255,0.9)", lineHeight: 1.6 }}>
-                <span style={{ flexShrink: 0, marginTop: 5, width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.8)" }} />
+              <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: 14, color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>
+                <span style={{ flexShrink: 0, marginTop: 6, width: 6, height: 6, background: "var(--orange)" }} />
                 {item}
-              </li>
+              </div>
             ))}
-          </ul>
-          <a href="#pesan" className="btn-primary" style={{ marginTop: 28, textAlign: "center", background: "#fff", color: "var(--green)", borderColor: "#fff", display: "block" }}>
-            Pesan NICEGAS Sekarang →
+          </div>
+
+          <a href="#pesan" className="btn-primary" style={{ marginTop: 32, textAlign: "center", display: "block", background: "#fff", color: "var(--orange)" }}>
+            PESAN NICEGAS SEKARANG
           </a>
         </div>
       </div>

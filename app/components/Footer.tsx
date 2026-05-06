@@ -1,74 +1,66 @@
+import Image from "next/image";
+
 export const Footer = () => (
   <footer style={{ padding: "48px 0 32px" }}>
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 40 }} className="footer-grid">
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-            <div className="logo-mark">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 2C9 2 4 5 4 10C4 13.3 6.5 15.5 9 15C11.5 15.5 14 13.3 14 10C14 5 9 2 9 2Z" fill="white" opacity="0.9" />
-              </svg>
-            </div>
-            <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 18, color: "#fff" }}>
-              NICE<span style={{ color: "var(--orange)" }}>GAS</span>
-            </span>
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 0, marginBottom: 40 }} className="footer-grid">
+        <div style={{ paddingRight: 48, borderRight: "1px solid rgba(255,255,255,0.08)" }}>
+          <div style={{ marginBottom: 20 }}>
+            <Image
+              src="/images/logo.png"
+              alt="NICEGAS"
+              width={140}
+              height={65}
+              style={{ objectFit: "contain", height: 40, width: "auto", filter: "brightness(0) invert(1)" }}
+            />
           </div>
-          <p style={{ fontSize: 13, lineHeight: 1.7, maxWidth: 320, marginBottom: 20 }}>
-            NICEGAS adalah inovasi Bio-CNG hasil pemurnian biogas oleh ITENAS Bandung. Energi bersih, bebas bau, aman, dan terjangkau untuk rumah tangga dan industri.
+          <p style={{ fontSize: 13, lineHeight: 1.7, maxWidth: 320, marginBottom: 16 }}>
+            Inovasi Bio-CNG hasil pemurnian biogas oleh ITENAS Bandung. Energi bersih, bebas bau, aman, dan terjangkau.
           </p>
-          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontStyle: "italic" }}>
-            &quot;Collaboration, Innovation, Impact&quot;
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            Collaboration. Innovation. Impact.
           </p>
         </div>
 
-        <div>
-          <h5 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, color: "rgba(255,255,255,0.9)", marginBottom: 16, letterSpacing: "0.05em" }}>
-            NAVIGASI
-          </h5>
+        <div style={{ paddingLeft: 48, paddingRight: 48, borderRight: "1px solid rgba(255,255,255,0.08)" }}>
+          <h5 style={{ fontWeight: 700, fontSize: 11, color: "rgba(255,255,255,0.4)", marginBottom: 20, letterSpacing: "0.15em" }}>NAVIGASI</h5>
           {[
-            ["Beranda", "#"],
-            ["Masalah & Solusi", "#masalah"],
-            ["Proses", "#proses"],
-            ["Keunggulan", "#keunggulan"],
-            ["Roadmap", "#roadmap"],
-            ["Mitra", "#mitra"],
-            ["Berita", "#berita"],
-            ["Pesan", "#pesan"],
+            ["Beranda", "#"], ["Masalah & Solusi", "#masalah"], ["Proses", "#proses"],
+            ["Keunggulan", "#keunggulan"], ["Roadmap", "#roadmap"], ["Mitra", "#mitra"],
+            ["Berita", "#berita"], ["Pesan", "#pesan"],
           ].map(([l, href]) => (
-            <a key={l} href={href} style={{ display: "block", textDecoration: "none", fontSize: 13, marginBottom: 10, transition: "color 0.2s", color: "rgba(255,255,255,0.6)" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "var(--orange)"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.6)"; }}>
+            <a key={l} href={href} style={{ display: "block", textDecoration: "none", fontSize: 13, marginBottom: 10, color: "rgba(255,255,255,0.5)", transition: "color 0.2s" }}
+              onMouseEnter={e => { e.currentTarget.style.color = "var(--orange)"; }}
+              onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}>
               {l}
             </a>
           ))}
         </div>
 
-        <div>
-          <h5 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, color: "rgba(255,255,255,0.9)", marginBottom: 16, letterSpacing: "0.05em" }}>
-            KONTAK
-          </h5>
+        <div style={{ paddingLeft: 48 }}>
+          <h5 style={{ fontWeight: 700, fontSize: 11, color: "rgba(255,255,255,0.4)", marginBottom: 20, letterSpacing: "0.15em" }}>KONTAK</h5>
           {[
-            ["📍", "Jl. PHH. Mustofa No.23, Bandung, Jawa Barat"],
-            ["📞", "+62 22 7272 700"],
-            ["✉️", "info@nicegas.id"],
-            ["🌐", "www.nicegas.id"],
-          ].map(([icon, val]) => (
-            <div key={val} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: 12 }}>
-              <span style={{ flexShrink: 0, fontSize: 13 }}>{icon}</span>
-              <span style={{ fontSize: 13, lineHeight: 1.5 }}>{val}</span>
+            ["ALAMAT", "Jl. PHH. Mustofa No.23, Bandung, Jawa Barat"],
+            ["TELEPON", "+62 22 7272 700"],
+            ["EMAIL", "info@nicegas.id"],
+            ["WEB", "www.nicegas.id"],
+          ].map(([label, val]) => (
+            <div key={val} style={{ marginBottom: 14 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, color: "var(--orange)", letterSpacing: "0.12em", marginBottom: 2 }}>{label}</div>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.5 }}>{val}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div style={{ height: 1, background: "rgba(255,255,255,0.08)", marginBottom: 24 }} />
+      <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginBottom: 24 }} />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-        <p style={{ fontSize: 12 }}>© 2026 NICEGAS — Institut Teknologi Nasional (ITENAS) Bandung. All rights reserved.</p>
-        <div style={{ display: "flex", gap: 20 }}>
-          {["Kebijakan Privasi", "Syarat & Ketentuan"].map((l) => (
-            <a key={l} href="#" style={{ fontSize: 12, textDecoration: "none", transition: "color 0.2s", color: "rgba(255,255,255,0.6)" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "var(--orange)"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.6)"; }}>
+        <p style={{ fontSize: 11, letterSpacing: "0.02em" }}>&copy; 2026 NICEGAS — Institut Teknologi Nasional (ITENAS) Bandung</p>
+        <div style={{ display: "flex", gap: 24 }}>
+          {["Kebijakan Privasi", "Syarat & Ketentuan"].map(l => (
+            <a key={l} href="#" style={{ fontSize: 11, textDecoration: "none", color: "rgba(255,255,255,0.4)", transition: "color 0.2s" }}
+              onMouseEnter={e => { e.currentTarget.style.color = "var(--orange)"; }}
+              onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.4)"; }}>
               {l}
             </a>
           ))}
