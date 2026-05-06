@@ -16,9 +16,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "nicegas — Solusi Energi Masa Depan",
+  title: "NICEGAS — Bio-CNG Energi Bersih Terbarukan | ITENAS Bandung",
   description:
-    "Solusi biogas skala industri & komersial: eco-friendly, zero-waste, terintegrasi.",
+    "NICEGAS adalah inovasi Bio-CNG hasil pemurnian biogas yang bebas bau, aman, dan siap digunakan sebagai energi bersih terbarukan. Produk hilirisasi riset ITENAS Bandung.",
 };
 
 export default function RootLayout({
