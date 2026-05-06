@@ -1,34 +1,44 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════
+   NICEGAS — Flat Design System
+   Zero depth. Color as structure. Type as interface.
+   ═══════════════════════════════════════════════ */
+
 :root {
-  /* Primary Colors */
-  --orange: #f36f01;         /* Primary Orange */
-  --orange-dark: #d66201;    /* Darker Orange */
-  --yellow: #ffb400;         /* Yellow Accent */
-  
-  /* Dark Backgrounds (Neutral/Warm) */
-  --charcoal: #1a1a1a;       
-  --charcoal-light: #262626; 
-  
-  /* Neutrals */
-  --white: #ffffff;
-  --gray-50: #fafafa;
-  --gray-100: #f4f4f5;
-  --gray-200: #e4e4e7;
-  --gray-500: #71717a;
-  --gray-900: #18181b;
-  --font: var(--font-inter), "Inter", system-ui, sans-serif;
+  /* ─── Design Tokens ────────────────────────── */
+  --bg: #FFFFFF;
+  --fg: #111827;
+  --primary: #F97316;        /* Orange 500 */
+  --primary-hover: #EA580C;  /* Orange 600 */
+  --secondary: #15803D;      /* Green 700 */
+  --accent: #F59E0B;         /* Amber 500 */
+  --muted: #F3F4F6;          /* Gray 100 */
+  --border: #E5E7EB;         /* Gray 200 */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-900: #111827;
+
+  /* Dark surfaces */
+  --charcoal: #111827;
+  --charcoal-light: #1F2937;
+
+  /* Typography */
+  --font: var(--font-outfit), "Outfit", system-ui, sans-serif;
 }
 
 @theme inline {
   --font-sans: var(--font);
 }
 
+/* ─── Reset ──────────────────────────────────── */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-radius: 0 !important;
 }
 
 html {
@@ -37,8 +47,8 @@ html {
 
 body {
   font-family: var(--font);
-  color: var(--gray-900);
-  background: var(--white);
+  color: var(--fg);
+  background: var(--bg);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -49,12 +59,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -0.02em;
 }
 
-/* ─── Scroll-reveal (minimal, purposeful) ──── */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* ─── Scroll-reveal ──────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -83,104 +88,160 @@ h1, h2, h3, h4, h5 {
   transform: translateX(0);
 }
 
-/* ─── Navbar ─────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   NAVBAR — flat, no shadow
+   ═══════════════════════════════════════════════ */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  transition: box-shadow 0.3s;
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+  transition: border-color 0.2s;
 }
 .navbar.scrolled {
-  box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+  border-bottom-color: var(--primary);
 }
 
-/* ─── Buttons ────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   BUTTONS — solid fills, scale on hover, NO shadow
+   ═══════════════════════════════════════════════ */
 .btn-primary {
-  background: var(--orange);
+  background: var(--primary);
   color: #fff;
-  padding: 12px 28px;
-  border-radius: 0;
+  padding: 14px 32px;
+  border-radius: 12px !important;
   font-family: var(--font);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
   display: inline-block;
   text-decoration: none;
 }
 .btn-primary:hover {
-  background: var(--orange-dark);
+  background: var(--primary-hover);
+  transform: scale(1.05);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--orange);
-  padding: 12px 28px;
-  border-radius: 0;
+  color: var(--primary);
+  padding: 14px 32px;
+  border-radius: 12px !important;
   font-family: var(--font);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border: 2px solid var(--orange);
+  border: 3px solid var(--primary);
+
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
   display: inline-block;
 }
 .btn-outline:hover {
-  background: var(--orange);
+  background: var(--primary);
   color: #fff;
+  transform: scale(1.05);
 }
 
-/* ─── Section label ──────────────────────────── */
+/* ═══════════════════════════════════════════════
+   SECTION LABEL — orange left border accent
+   ═══════════════════════════════════════════════ */
 .section-label {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--primary);
   font-family: var(--font);
   display: inline-block;
-  border-left: 3px solid var(--orange);
+  border-left: 4px solid var(--primary);
   padding-left: 12px;
   line-height: 1;
 }
 
-/* ─── Panels (sharp rectangles) ──────────────── */
-.panel {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  padding: 36px;
+/* ═══════════════════════════════════════════════
+   CARDS — solid bg, no shadow, no border, rounded-lg
+   ═══════════════════════════════════════════════ */
+.card {
+  background: var(--bg);
+  padding: 32px;
+  border-radius: 24px !important;
   position: relative;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
 }
-.panel:hover {
-  border-color: var(--orange);
-}
-.panel-dark {
-  background: var(--charcoal-light);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: #fff;
-  padding: 36px;
+.card:hover {
+  transform: scale(1.02);
 }
 
-/* ─── Form ───────────────────────────────────── */
+.card-muted {
+  background: var(--muted);
+  padding: 32px;
+  border-radius: 24px !important;
+  position: relative;
+  transition: all 0.2s;
+}
+.card-muted:hover {
+  background: #E5E7EB;
+  transform: scale(1.02);
+}
+
+.card-orange {
+  background: #FFF7ED;
+  padding: 32px;
+  border-radius: 24px !important;
+  transition: all 0.2s;
+}
+.card-orange:hover {
+  background: #FFEDD5;
+  transform: scale(1.02);
+}
+
+.card-green {
+  background: #F0FDF4;
+  padding: 32px;
+  border-radius: 24px !important;
+  transition: all 0.2s;
+}
+.card-green:hover {
+  background: #DCFCE7;
+  transform: scale(1.02);
+}
+
+.card-dark {
+  background: var(--charcoal-light);
+  color: #fff;
+  padding: 32px;
+  border-radius: 24px !important;
+  transition: all 0.2s;
+}
+.card-dark:hover {
+  background: #374151;
+  transform: scale(1.02);
+}
+
+
+/* ═══════════════════════════════════════════════
+   FORM — gray bg inputs, hard orange focus border
+   ═══════════════════════════════════════════════ */
 .cta-section {
-  background: var(--orange);
+  background: var(--primary);
   position: relative;
 }
 
 .form-card {
-  background: var(--white);
+  background: var(--bg);
   padding: 40px;
+  border-radius: 12px;
 }
 
 .form-field {
@@ -190,7 +251,7 @@ h1, h2, h3, h4, h5 {
 }
 .form-field label {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--gray-500);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -198,21 +259,22 @@ h1, h2, h3, h4, h5 {
 .form-field input,
 .form-field select,
 .form-field textarea {
-  padding: 12px 16px;
-  border: 1px solid var(--gray-200);
-  border-radius: 0;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   font-size: 14px;
   font-family: var(--font);
-  color: var(--gray-900);
-  background: var(--white);
+  color: var(--fg);
+  background: var(--muted);
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
   width: 100%;
 }
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-color: var(--orange);
+  background: var(--bg);
+  border-color: var(--primary);
 }
 .form-field textarea {
   resize: vertical;
@@ -220,10 +282,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-submit {
-  background: var(--gray-900);
+  background: var(--fg);
   color: #fff;
-  padding: 14px 28px;
-  border-radius: 0;
+  padding: 16px 28px;
+  border-radius: 8px;
   font-family: var(--font);
   font-weight: 700;
   font-size: 14px;
@@ -231,35 +293,42 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
   width: 100%;
 }
 .btn-submit:hover {
-  background: var(--charcoal);
+  background: var(--charcoal-light);
+  transform: scale(1.02);
 }
 .btn-submit:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
 
-/* ─── Footer ─────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   FOOTER — dark flat block
+   ═══════════════════════════════════════════════ */
 footer {
   background: var(--charcoal);
   color: rgba(255,255,255,0.6);
 }
 
-/* ─── Mobile nav ─────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   MOBILE NAV
+   ═══════════════════════════════════════════════ */
 .mobile-menu {
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: var(--white);
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   padding: 24px;
 }
 
-/* ─── WhatsApp FAB ───────────────────────────── */
+/* ═══════════════════════════════════════════════
+   WHATSAPP FAB — flat rounded-lg
+   ═══════════════════════════════════════════════ */
 .wa-fab {
   position: fixed;
   bottom: 28px;
@@ -267,19 +336,22 @@ footer {
   z-index: 999;
   width: 56px;
   height: 56px;
-  border-radius: 0;
+  border-radius: 12px;
   background: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: all 0.2s;
   text-decoration: none;
 }
 .wa-fab:hover {
   background: #1da855;
+  transform: scale(1.1);
 }
 
-/* ─── Responsive ─────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .benefits-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .partner-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -297,6 +369,7 @@ footer {
   .press-grid { grid-template-columns: 1fr !important; }
   .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .figures-grid { grid-template-columns: 1fr !important; }
+  .footer-grid > div { padding: 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px !important; }
 }
 
 @media (max-width: 640px) {
